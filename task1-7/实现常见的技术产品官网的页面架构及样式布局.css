@@ -1,0 +1,433 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, ul, li, form, input { margin:0; padding:0; font-family: "微软雅黑"}
+
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+
+ul { list-style:none; }
+
+a { text-decoration:none; }
+
+a:hover { text-decoration:none; }
+
+img { border:0; }
+
+button, input, select, textarea { font-size:100%; }
+    /*清除浮动*/
+.clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    clear:both;
+}
+/*兼容ie浏览器*/
+.clearfix {
+    zoom:1;
+}
+
+    /*主页面*/
+    .container {
+        width: 1280px;
+        margin: 0 auto;
+
+    }
+    /*头部开始*/
+    .header {
+        height: 56px;
+    }
+    .header-l {
+        float: left;
+        height: 56px;
+        margin-left: 59px;
+    }
+    .header-l img {
+        float: left;
+        margin: 9px 7px 0 0;
+    }
+    .header-l h2 {
+        float: left;
+        height: 56px;
+        line-height: 56px;
+
+    }
+    .header-r {
+        float: right;
+    }
+    .header-r ul li {
+        float: left;
+        width: 100px;
+        height: 53px;
+        font: 14px/56px "微软雅黑";
+        color: #787B83;
+        text-align: center;
+    }
+    .header-r ul .last-li {
+        color: #E74F4D;
+        background: url("imgs/login.png") left no-repeat;
+        background-position-x: 10px;
+
+    }
+    .header-r ul li:hover {
+        border-bottom: 3px solid #E74F4D;
+        color: #E74F4D;
+
+    }
+    /*头部结束*/
+
+    /*广告页面开始*/
+    .banner {
+        height: 690px;
+        position: relative;
+        border: 1px solid #e4e4e4;
+
+    }
+    .banner button {
+        position: absolute;
+        width: 330px;
+        height: 65px;
+        color: #fff;
+        background-color: #E74F4D;
+        top: 430px;
+        left: 125px;
+        font-size: 31px;
+    }
+    /*广告页面结束*/
+
+    /*推荐区域开始*/
+    .section {
+        width: 1280px;
+        height: 250px;
+    }
+    .sec {
+        float: left;
+        width: 320px;
+        text-align: center;
+    }
+    .sec img {
+        margin: 40px 0 40px 0;
+    }
+    .sec p {
+        font: 14px "微软雅黑";
+        color: #8D8D8D;
+        width: 320px;
+        height: 52px;
+        border-right: 2px solid #BEBEBE;
+    }
+    .sec .last-p {
+        border-style: hidden;
+    }
+    /*推荐区域结束*/
+
+    /*中间问题部分开始*/
+    .qa {
+        height: 360px;
+        text-align: center;
+        background-color: #EDECEC;
+    }
+    .qa img {
+        margin: 90px auto 40px;
+    }
+    .qa h1 {
+        font-size: 52px;
+        color: #A1A1A1;
+    }
+    /*中间问题部分结束*/
+
+    /*城市选择部分开始*/
+    .citys {
+        height: 340px;
+        background: url("imgs/map-img.png") no-repeat;
+        text-align: center;
+        padding-top: 52px;
+    }
+    .citys .mess1 {
+        font-size: 23px;
+        color: #fff;
+    }
+    .citys div {
+        margin: 8px auto 20px;
+        height: 2px;
+        width: 30px;
+        border-top: 2px solid #fff;
+    }
+    .citys .mess2 {
+        margin-bottom: 50px;
+        font-size: 16px;
+        color: #fff;
+    }
+    .citys form select {
+        width: 236px;
+        height: 36px;
+        margin-left: 29px;
+    }
+    .citys input {
+        display: inline-block;
+        width: 236px;
+        height: 36px;
+        margin-left: 29px;
+        color: #fff;
+        background-color: #BE4E48;
+        font-size: 20px;
+    }
+    /*城市选择部分结束*/
+
+    /*活动部分开始*/
+    .events {
+        height: 390px;
+        padding: 100px 0 114px 111px;
+        background-color: #F8F7F7;
+    }
+    .events div {
+        float: left;
+        margin-left: 37px;
+        text-align: center;
+    }
+
+    .events div p {
+        color: #909191;
+        font-size: 12px;
+    }
+
+    /*活动部分结束*/
+
+    /*新世界部分开始*/
+    .new-world {
+        height: 567px;
+    }
+    .new-world-l {
+        float: left;
+        height: 567px;
+
+    }
+    .new-world-r {
+        width: 430px;
+        float: right;
+        text-align: center;
+    }
+    .new-world-r h3 {
+        margin-top: 160px;
+        display: inline-block;
+        font: 700 22px "微软雅黑";
+    }
+    .new-world-r span {
+        font: 700 22px "微软雅黑";
+        color: #E74F4D;
+    }
+    .new-world-r p {
+        line-height: 30px;
+        width: 286px;
+        margin: 30px auto;
+        color: #C3C3C3;
+    }
+    .new-world-r a {
+        display: inline-block;
+        color: #E46B6E;
+        width: 106px;
+        height: 34px;
+        line-height: 34px;
+        border: 1px solid #E46B6E;
+    }
+    /*新世界部分结束*/
+
+    /*新时代部分开始*/
+    .new-life {
+        height: 521px;
+    }
+    /*左部*/
+    .new-life-l {
+        float: left;
+        width: 425px;
+        height: 351px;
+        background-color: #E8504E;
+        padding-top: 170px;
+        text-align: center;
+    }
+    .new-life-l p {
+        font: 22px "微软雅黑";
+        color: #fff;
+    }
+    .new-life-l div {
+        margin: 20px auto 20px;
+        height: 2px;
+        width: 30px;
+        border-top: 2px solid #fff;
+    }
+    .new-life-l a {
+        display: inline-block;
+        color: #fff;
+        width: 167px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid #fff;
+    }
+    /*中部*/
+    .new-life-m {
+        float: left;
+        width: 425px;
+        height: 351px;
+        padding-top: 170px;
+        text-align: center;
+    }
+    .new-life-m p {
+        font: 22px "微软雅黑";
+        color: #000;
+    }
+    .new-life-m div {
+        margin: 20px auto 20px;
+        height: 2px;
+        width: 30px;
+        border-top: 2px solid #000;
+    }
+    .new-life-m a {
+        display: inline-block;
+        color: #000;
+        width: 167px;
+        height: 40px;
+        line-height: 40px;
+        border: 1px solid #000;
+    }
+    /*右部*/
+    .new-life-r {
+        float: left;
+        width: 430px;
+        height: 521px;
+    }
+/*新时代部分结束*/
+
+    /*联系表格部分开始*/
+    .contact-form {
+        height: 750px;
+        text-align: center;
+    }
+    .contact-form .title-part h2 {
+        margin-top: 120px;
+        font-size: 19px;
+    }
+    .contact-form .title-part div {
+        margin: 10px auto 10px;
+        height: 2px;
+        width: 30px;
+        border-top: 2px solid #E7504D;
+    }
+    .contact-form .title-part p {
+        color: #B7B7B7;
+        margin-bottom: 105px;
+    }
+    .form-part .form-part-l {
+        float: left;
+        text-align: left;
+        width: 290px;
+
+        margin-left: 140px;
+    }
+    .form-part .form-part-l .table-row {
+        width: 290px;
+        margin-bottom: 20px;
+    }
+    .form-part-l .table-row h3 {
+        font: 700 15px "微软雅黑";
+        color: #74706F;
+        margin-bottom: 20px;
+    }
+    .form-part-l .table-row p,
+    .form-part-l .table-row a {
+        font: 12px/22px "微软雅黑";
+        color: #BCBBBA;
+    }
+    .form-part-l .table-row a {
+        float: right;
+    }
+    .form-part .form-part-r {
+        float: right;
+        width: 700px;
+        height: 285px;
+        margin-right: 140px;
+
+    }
+    .form-part-r form input {
+        background-color: #EDEDED;
+        width: 310px;
+        height: 40px;
+        margin-bottom: 15px;
+        margin-left: 20px;
+        border-style: none;
+    }
+    .form-part-r form textarea {
+        width: 640px;
+        height: 120px;
+        background-color: #EDEDED;
+        margin-left: 18px;
+        border-style: none;
+    }
+    .form-part-r form .submit {
+        width: 640px;
+        color: #323333;
+        margin-top: 14px;
+    }
+    /*联系表格部分结束*/
+
+    /*邮件部分开始*/
+    .email {
+        height: 358px;
+        background-color: #32363E;
+        text-align: center;
+        color: #fff;
+        padding-top: 90px;
+    }
+    .email h2 {
+        font-size: 20px;
+        line-height: 32px;
+    }
+    .email p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+    .email div {
+        margin: 13px auto;
+        width: 510px;
+        height: 40px;
+        position: relative;
+
+    }
+    .email div .email-name {
+        width: 430px;
+        height: 40px;
+        border-style: none;
+
+    }
+    .email div .submit {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        width: 80px;
+        height: 40px;
+        border-style: none;
+        background-color: #6F7178;
+        color: #fff;
+    }
+    .email a {
+        display: inline-block;
+        height: 29px;
+        width: 29px;
+        margin-right: 28px;
+        margin-top: 35px;
+    }
+    /*邮件部分结束*/
+
+    /*页脚部分开始*/
+    .footer {
+        height: 57px;
+        background-color: #2F2F38;
+        line-height: 57px;
+    }
+    .footer span {
+        float: left;
+        margin-left: 100px;
+        color: #fff;
+    }
+    .footer a {
+        float: right;
+        margin-right: 40px;
+        color: #fff;
+    }
+    /*页脚部分结束*/

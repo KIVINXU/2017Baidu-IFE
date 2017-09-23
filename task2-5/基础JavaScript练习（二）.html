@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE JavaScript Task 05</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            height: 100px;
+        }
+        .output {
+            position: relative;
+            cursor: pointer;
+            bottom: 0;
+            display: inline-block;
+            margin: 5px;
+            width: 20px;
+            background-color: red;
+
+        }
+    </style>
+</head>
+<body>
+    <input type="number">
+    <input type="button" value="左侧入">
+    <input type="button" value="右侧入">
+    &nbsp;&nbsp;&nbsp;
+    <input type="button" value="左侧出">
+    <input type="button" value="右侧出">
+    &nbsp;&nbsp;&nbsp;
+    <input type="button" value="冒泡排序">
+
+    <ul>
+
+    </ul>
+    <script type="text/javascript">
+        //获取事件源
+        var inpArr = document.getElementsByTagName("input");
+        var ul = document.getElementsByTagName("ul")[0];
+        var liArr = document.getElementsByTagName("li");
+
+
+        function click(inputNum) {
+            //限制输入的数字在10-100
+            if (inpArr[0].value < 10 || inpArr[0].value > 100) {
+                return alert("请输入10-100的数字");
+
+            }
+            //队列元素数量最多限制为60个，当超过60个时，添加元素时alert出提示
+            if(ul.children.length >= 60) {
+                return alert("队列元素不能超过60个！");
+            }else {
+                //每次点击 创建一个li
+                var newLi = document.createElement("li");
+                newLi.style.height = inpArr[0].value + "px";
+                newLi.className = "output";
+                if(inputNum === inpArr[1]) {
+                    //左侧输入
+                    ul.insertBefore(newLi,ul.children[0]);
+                }else if(inputNum === inpArr[2]) {
+                    //右侧输入
+                    ul.appendChild(newLi);
+                }
+            }
+        }
+
+        //点击"左侧入"，将input中输入的数字从左侧插入队列中
+        inpArr[1].onclick = function () {
+            click(this);
+            deleteLi();
+
+        }
+
+        //点击"右侧入"，将input中输入的数字从右侧插入队列中；
+        inpArr[2].onclick = function () {
+            click(this);
+            deleteLi();
+        }
+
+        //点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值；
+        inpArr[3].onclick = function () {
+            //移出前先判断有没有
+            if (ul.children) {
+                alert("删除的元素高度为："+ul.children[0].offsetHeight);
+                ul.removeChild(ul.children[0]);
+
+            }else {
+                return alert("队列中没有元素");
+            }
+        }
+
+        //点击"右侧出"，读取并删除队列又侧第一个元素，并弹窗显示元素中数值；
+        inpArr[4].onclick = function () {
+            //移出前先判断有没有
+            if (ul.children) {
+                alert("删除的元素高度为：" + ul.lastChild.offsetHeight);
+                ul.removeChild(ul.lastChild);
+
+            }else {
+                return alert("队列中没有元素");
+            }
+        }
+
+
+        //点击排序按钮，对队列进行冒泡排序
+        inpArr[5].onclick = function () {
+            for(var i=0;i<liArr.length-1;i++){
+                //开闭原则。（写在第一个for循环里，是为了每轮比较初始化bool变量变为true。）
+                var bool = true;
+                //2.指定轮数和次数（内循环控制次数）
+                for(var j=0;j<liArr.length-1-i;j++){
+                    //3.判断是否符合标准。如果符合标准交换位置。
+                    //比较元素的高度，从小到大排列，如果前面的比后面的大，那么交换位置。
+                    if(liArr[j].offsetHeight > liArr[j+1].offsetHeight){
+                        var temp = liArr[j].offsetHeight;
+                        liArr[j].style.height = liArr[j+1].offsetHeight + "px";
+                        liArr[j+1].style.height = temp + "px";
+                        bool = false;
+                    }
+                }
+                if(bool){
+                    break;
+                }
+            }
+        }
+
+
+        //点击队列中任何一个元素，则该元素会被从队列中删除
+        function deleteLi() {
+            for(var i=0; i<liArr.length; i++) {
+                liArr[i].onclick = function () {
+                    alert("当前元素高度为：" + this.offsetHeight);
+                    ul.removeChild(this);
+                }
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

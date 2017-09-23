@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        /* 初始化 */
+        	body,ul,li,p,form,img,div{
+        		margin: 0;
+        		padding: 0;
+        		border: 0;
+        	}
+        	ul{
+        		list-style-type: none;
+        	}
+        	a {
+        		text-decoration: none;
+        	}
+        	/* 清除浮动 */
+        	.clearfix:after{
+        		content: ".";
+        		display: block;
+        		height: 0;
+        		line-height: 0;
+        		visibility: hidden;
+				clear: both;
+        	}
+        	/*兼容ie浏览器*/
+			.clearfix{
+			zoom:1;
+			}
+			/* 整体页面布局 */
+        	.paper{
+        		margin: 0 auto;
+        		width: 980px;
+        		height: 1386px;
+        	}
+        	/* 头部导航栏布局 */
+        	.header{
+        		width: 892px;
+        		height: 61px;
+        		margin: 0 auto;
+        		border-bottom: 2px solid #938e8c;
+        	}
+        	.header a{
+				display: inline-block;
+				width: 110px;
+				height: 19px;
+				font: 12px 黑体;
+				color: #ffffff; 
+				background-color: #d45d5c;
+				vertical-align: bottom;
+				padding-top: 42px
+        	}
+        	.header span{
+        		float: right;
+        		margin: 42px 0 5px;
+        		font: 12px 黑体; 
+				color: #d45d5c;	
+        	}
+        	/* 广告栏布局 */
+        	.banner{
+        		position: relative;
+        		width: 892px;
+        		margin: 0 auto;	
+        	}
+			.banner .pic{
+				position: relative;
+				left: 0px;
+				top: 30px;
+				width: 641px;
+				height: 301px;
+			}
+			.banner .pic .green{
+				position: absolute;
+				width: 191px;
+				height: 301px;
+				left: 0;
+				top: 0;
+				background-color: rgba(0,175,0,0.3);
+			}
+			.banner .pic .red{
+				position: absolute;
+				width: 191px;
+				height: 301px;
+				right: 0;
+				top: 0;
+				background-color: rgba(255,0,0,0.3);
+			}
+			/* 广告栏右半部分布局 */
+			.banner .tech{
+				position: absolute;
+				right: 0;
+				top: 30px;
+				width: 203px;
+				height: 301px;						
+			}
+			.banner .tech .top{
+				border-top: 2px solid #cc8091;
+				padding-top: 8px;
+			}
+			.banner .tech .top span{
+				font: 24px/40px 微软雅黑;
+				text-decoration: underline;
+			}
+			.banner .tech .top p{
+				font: 12px/10px 楷体;
+				color: #676767;
+			}
+			.banner .tech .middle{
+				font: italic 116px 微软雅黑;
+				color: #75b86b;
+				text-decoration: underline;
+			}
+			.banner .tech .bottom {
+				color: #cc8091;
+				font: 12px 微软雅黑;
+				vertical-align: bottom;
+			}
+			.banner .tech .bottom div{
+				display: inline-block;
+				
+			}
+			/* 三大问题块布局 */
+		    .what,.when,.how{
+				display: inline-block;
+				width: 200px;
+				margin: 60px 0 0 44px;
+				vertical-align: top;
+
+			}
+			.what span{
+				font: bold 16px 微软雅黑;
+				text-decoration: underline;
+				color: #418c59;
+			}
+			.when span{
+				font: bold 16px 微软雅黑;
+				text-decoration: underline;
+				color: #d2994f;
+			}
+			.how span{
+				font: bold 16px 微软雅黑;
+				text-decoration: underline;
+				color: #cc7680;
+			}
+			.how ul li{
+				font: 12px/16px 微软雅黑;
+				color: #231815;
+			}
+			.how ul li span{
+				font: italic 12px/16px 微软雅黑;
+			}
+			.content p{
+				font: 12px/16px 宋体;
+				color: #767777;
+			}
+			/* 信息栏左半部分布局 */
+			.left-info{
+				float: left;
+				width: 415px;
+				font: 12px 宋体;
+				color: #767777;	
+				margin: 30px 10px 30px 44px;
+			}
+			.left-info .front{
+				float: left;
+				font: 72px 微软雅黑;
+				color: #f5e327;
+				text-align: center;
+				line-height: 72px;
+			}
+			.left-info img{
+				float: right;
+				margin: 15px;
+			}
+			.info-title {
+				border-bottom: 2px solid #11456b;
+				margin-bottom: 20px;
+			}
+			.info-title p{
+				font: 700 42px/42px 黑体;
+				color: #11456b;
+
+
+			}
+			.info-title .the{
+				font: italic 700 72px/72px 黑体;
+				color: #f5e327;
+			}
+			/* 信息栏右半部分布局 */
+			.right-info{
+				float: left;
+				width: 459px;
+				margin: 30px 0 30px;
+			}
+			.right-info .front-pic{
+				position: relative;
+				width: 458px;
+			}
+			.right-info .front-pic div{
+				
+				position: absolute;
+				bottom: 0;
+				width: 458px;
+				height: 61px;
+				background-color: rgba(50,50,50,0.3);
+			}
+			.right-info .front-pic div .main-title{
+				font: 26px/61px 微软雅黑;
+				color: #ffffff;
+				margin-left: 30px;
+				border-left: 3px solid #72b16a;
+				border-height: 44px;
+				padding-left: 8px;
+			}
+			.right-info .front-pic div .sub-title{
+				font: italic 12px/61px 微软雅黑;
+				letter-spacing: 140%;
+				color: #72b16a;
+			}
+			.right-info .link{
+				background-color: #eee;
+				display: inline-block;
+				margin-top: 20px;
+
+			}
+		    .right-info .link ul li{
+		    	background: url(tri3.png) no-repeat;
+		    	padding-left: 20px;
+		    	margin: 20px 30px;
+		    	font: 16px 宋体;
+		    	color: #5a5b5b; 
+		    }
+		    .right-info .link ul li span{
+		    	font: italic 12px 宋体;
+		    	color: #5a5b5b;
+		    	text-align: right;
+		    }
+		    .right-info .num{
+		    	display: inline-block;
+		    	width: 250px;
+		    	height: 86px;
+		    	padding: 37px 5px;
+		    	background-color: #d45d5c;
+		    }
+		    .right-info .num span{
+ 				display: inline-block;
+ 				height: 86px;
+		    	font: 110px/86px 微软雅黑;
+		    	color: #ffffff;
+		    	border-right: 2px solid #ffffff;
+		    	padding:0px 10px; 
+		    }
+		    .right-info .num .one{
+		    	display: inline-block;
+		    	width: 150px;
+				font: italic 21px/24px 黑体;
+		    	color: #ffffff;	
+		    	margin-left: 10px;			
+		    }
+		    .right-info .num .one .hello{
+		    	font: 12px/12px 黑体;
+		    }
+		    .right-info .refer{
+		    	display: inline-block;
+		    	margin-left: 10px;
+		    	width: 180px;
+		    	font: italic 14px/16px 黑体;
+		    	color: #5a5b5b;
+		    }
+		    .right-info .refer .left-quot{
+		    	float: left;
+		    	height: 25px;
+		    	margin: -10px 0 0 -35px;
+		    	font: 72px/72px 黑体;
+		    	text-align: center;
+		    	color: #d45d5c;
+		    }
+		    .right-info .refer .right-quot{
+		    	float: right;
+		    	height: 25px;
+		    	margin-right: -20px;
+		    	font: 72px/72px 黑体;
+		    	color: #d45d5c;
+		    }
+		    .footer{
+		    	width: 892px;
+        		height: 61px;
+        		margin: 0 auto;
+        		border-top: 2px solid #938e8c;
+		    }
+		    .footer span{
+		    	float: right;
+        		font: 12px 黑体; 
+				color: #d45d5c;	
+		    }
+        </style>
+    </head>
+    <body>
+    	<div class="paper">
+    		<div class="header">
+    			<a href="#">ife.baidu.com</a>
+    			<span>2016.03</span>
+    		</div>
+    		<div class="content">
+    			<div class="banner clearfix">
+    				<div class="pic">
+    					<img src="前端1.jpg" height="301" width="641" alt="">
+						<div class="green"></div>
+						<div class="red"></div>
+    				</div>
+    				<div class="tech">
+	    				<div class="top">
+	    					<span><font style="font: 30px/40px 微软雅黑;">A</font>BOUT</span><br>
+	    					<span><font style="font: 30px/40px 微软雅黑;">T</font>ECHNOLOGE</span><br>
+	    					<p>About technologe about technologe about technologe about technologe about technologe</p>
+	    				</div>
+	    				<div class="middle">700</div>
+	    				<div class="bottom">
+	    					<span style="font-size: 55px;">3.2</span>
+	    					<div><span style="font-size: 21px;">CSS</span><br>CSSCSSCSSCSSCSS</div>
+    					</div>	
+    				</div>		
+    			</div>
+    			<div class="what">
+    					<span>What</span>
+    					<p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+    			</div>
+    			<div class="when">
+    					<span>When</span>
+    					<p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+    			</div>
+    			<div class="how">
+    					<span>How</span>
+    					<p>前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端</p>
+    					<ul>
+    						<li>What------- <span>40%</span></li>
+    						<li>What------- <span>30%</span></li>
+    						<li>What------- <span>30%</span></li>
+    					</ul>
+    			</div>    			
+    			<div class="info clearfix">
+    				<div class="left-info" >
+	    				<div class="info-title">
+	    					<p><span class="the">THE</span> TECHNOLOGE OF FRONT</p>
+	    					<p>前端技术领域</p>
+	    				</div>
+    					<span class="front">前</span>
+    					<p>端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前<img src="前端3.jpg" height="314" width="200" alt="">前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前</p>
+    					<p style="text-indent: 2em;">前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前端前</p>    					
+    				</div>
+    				<div class="right-info">
+    					<div class="front-pic">
+    						<img src="前端2.jpg" height="275" width="458" alt="">
+    					    <div><span class="main-title">前端技术</span><span class="sub-title">前端技术前端技术</span></div>
+    					</div>
+    					
+    					<div class="link">
+    						<ul>
+    							<li>前端前端前端前端..............<span>前端</span></li>
+    							<li>前端前端前端前端..............<span>前端</span></li>
+    							<li>前端前端前端前端..............<span>前端</span></li>
+    						</ul>
+    						<div class="num">
+    							<span>0</span><div class="one">ONE TWO THREE FOUR FIVE
+    							<div class="hello">Hello world hello world hello world hello world</div></div>
+    						</div>
+    						<div class="refer"><span class="left-quot">“</span>hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world<span class="right-quot">”</span></div>
+    					</div>
+    				</div>
+    			</div>	
+    		</div>
+    		<div class="footer">
+    			<span>ife.baidu.com</span>
+    		</div>
+    	</div>
+    </body>
+</html>

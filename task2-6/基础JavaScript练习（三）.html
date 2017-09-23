@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE JavaScript Task 06</title>
+    <style>
+        .container {
+            padding: 10px;
+            height: 30px;
+
+        }
+        .inputDiv {
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            padding: 10px;
+            margin: 0 5px;
+            background-color: #f00;
+            color: #fff;
+        }
+        .found {
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            padding: 10px;
+            margin: 0 5px;
+            background-color: #fff;
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="textinp" cols="30" rows="20"></textarea>
+    <input type="button" value="插入">
+    <input type="button" value="查询">
+    <input type="text" id="search">
+    <div class="container">
+
+    </div>
+    <script>
+        var textinp = document.getElementById("textinp");
+        var inpArr = document.getElementsByTagName("input");
+        var container = document.getElementsByClassName("container")[0];
+
+        //匹配非数字字母的符号，都用空格代替，然后根据空格分割内容
+
+        inpArr[0].onclick = function () {
+            var text = textinp.value;
+            var arr = text.replace(/[^0-9a-zA-Z]/g, " ").split(" ");
+            for (var i=0;i<arr.length;i++) {
+                var newDiv = document.createElement("div");
+                newDiv.innerHTML = arr[i];
+                newDiv.className = "inputDiv";
+                container.appendChild(newDiv);
+            }
+        }
+        //当点击查询时，将查询词在各个元素内容中做模糊匹配
+        inpArr[1].onclick = function () {
+            var keyword = inpArr[2].value;
+            var arr2 = container.children;
+            for (var i=0;i<arr2.length;i++) {
+                var temp = arr2[i].innerHTML;
+                if (keyword !== null && keyword.length > 0) {
+                   var reg = new RegExp(keyword);
+                    var num = temp.search(reg);
+                    if(num !== -1) {
+                        for(var j=0;j<arr2.length;j++) {
+                            arr2[j].className = "inputDiv";
+                        }
+                        arr2[i].className = "found";
+                    }
+                }
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

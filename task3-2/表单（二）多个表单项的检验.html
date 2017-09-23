@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单（二）多个表单项的检验</title>
+    <style type="text/css">
+        .container {
+            margin: 100px auto;
+            line-height: 50px;
+            font-size: 20px;
+
+        }
+        .container label {
+            display: inline-block;
+            text-align: right;
+            width: 80px;
+            margin-right: 10px;
+        }
+        .container div {
+            position: relative;
+            height: 100px;
+            width: 504px;
+            margin: 0 auto;
+
+        }
+        .container input {
+            width: 400px;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 8px;
+            border: 2px solid #CDCDCD;
+        }
+        .container button {
+            display: inline-block;
+            margin-left: 730px;
+            background-color: #1E76BD;
+            width: 150px;
+            height: 50px;
+            color: #fff;
+            border-radius: 8px;
+            border: 2px solid #1E76BD;
+            font-size: 20px;
+        }
+        .container div .result {
+            position: absolute;
+            left: 50%;
+            bottom: 5px;
+            margin-left: -155px;
+            font-size: 16px;
+            color: #BCBCBC;
+        }
+    </style>
+</head>
+<body>
+
+    <form class="container" action="">
+        <div>
+            <label for="input">名称</label>
+            <input type="text" id="input">
+            <span class="result">必填，长度为4～16个字符</span>
+        </div>
+
+        <div>
+            <label for="psw1">密码</label>
+            <input type="password" id="psw1">
+            <span class="result"></span>
+        </div>
+
+        <div>
+            <label for="psw2">密码确认</label>
+            <input type="password" id="psw2">
+            <span class="result"></span>
+        </div>
+
+        <div>
+            <label for="email">邮箱</label>
+            <input type="email" id="email">
+            <span class="result"></span>
+        </div>
+
+        <div>
+            <label for="tel">手机</label>
+            <input type="tel" id="tel">
+            <span class="result"></span>
+        </div>
+
+        <button>提交</button>
+    </form>
+    <script type="text/javascript" src="表单（二）多个表单项的检验.js"></script>
+</body>
+</html>

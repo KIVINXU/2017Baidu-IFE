@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单（一）单个表单项的检验</title>
+    <style>
+        .container {
+            margin: 100px auto;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+
+        }
+        .container label {
+            margin-right: 20px;
+        }
+        #input {
+            display: inline-block;
+            width: 400px;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 8px;
+            border: 2px solid #CDCDCD;
+        }
+        .container button {
+            display: inline-block;
+            margin-left: 20px;
+            background-color: #1E76BD;
+            width: 70px;
+            height: 50px;
+            color: #fff;
+            border-radius: 8px;
+            border: 2px solid #1E76BD;
+            font-size: 20px;
+        }
+        #result {
+            position: absolute;
+            left: 50%;
+            top: 145px;
+            margin-left: -210px;
+            font-size: 16px;
+            color: #BCBCBC;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="input">名称</label>
+        <input type="text" id="input">
+        <button>验证</button>
+        <span id="result">必填，长度为4～16个字符</span>
+    </div>
+    <script>
+        var button = document.getElementsByTagName("button")[0];
+        var span = document.getElementById("result");
+
+
+        button.onclick = function () {
+            var input = document.getElementById("input");
+
+            //判断字符长度 英文为1 中文为2
+            var len = 0;
+            var str = input.value;
+
+            if(str.charCodeAt(0) === 0x20) {//首字母不能为空格
+                len = -1;
+            }else {
+                for(var i=0;i<str.length;i++) {
+
+                    if(str.charCodeAt(i) >= 0x00 && str.charCodeAt(i) <= 0xFF) {
+                        len++;
+                    }else {
+                        len += 2;
+                    }
+                }
+            }
+            //验证输入长度是否在4～16字符之间
+            if(len >= 4 && len <= 16) {
+                input.style.border = "2px solid green";
+                span.style.color = "green";
+                span.innerHTML = "名称格式正确"
+            }else if(len === 0) {
+                //当输入为空，改变span内容和样式
+                input.style.border = "2px solid red";
+                span.style.color = "red";
+                span.innerHTML = "姓名不能为空";
+            }else {
+                input.style.border = "2px solid red";
+                span.style.color = "red";
+                span.innerHTML = "名称格式错误";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

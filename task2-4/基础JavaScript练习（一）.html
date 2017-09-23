@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE JavaScript Task 04</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        .output {
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <input type="number">
+    <input type="button" value="左侧入">
+    <input type="button" value="右侧入">
+    &nbsp;&nbsp;&nbsp;
+    <input type="button" value="左侧出">
+    <input type="button" value="右侧出">
+    <ul>
+
+    </ul>
+    <script type="text/javascript">
+        //获取事件源
+        var inpArr = document.getElementsByTagName("input");
+        var ul = document.getElementsByTagName("ul")[0];
+        //点击"左侧入"，将input中输入的数字从左侧插入队列中
+
+        inpArr[1].onclick = function () {
+            //每次点击 创建一个li
+            var newLi = document.createElement("li");
+            newLi.innerHTML = inpArr[0].value;
+            newLi.className = "output";
+            //左侧输入
+            ul.insertBefore(newLi,ul.children[0]);
+            deleteLi();
+        }
+        //点击"右侧入"，将input中输入的数字从右侧插入队列中；
+        inpArr[2].onclick = function () {
+            //每次点击 创建一个li
+            var newLi = document.createElement("li");
+            newLi.innerHTML = inpArr[0].value;
+            newLi.className = "output";
+            //右侧输入
+            ul.appendChild(newLi);
+            deleteLi();
+        }
+        //点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值；
+        inpArr[3].onclick = function () {
+            //移出前先判断有没有
+            if (ul.children[0]) {
+                alert("删除的数字为："+ul.children[0].innerHTML);
+                ul.removeChild(ul.children[0]);
+
+            }else {
+                return alert("队列中没有元素")
+            }
+        }
+        //点击"右侧出"，读取并删除队列又侧第一个元素，并弹窗显示元素中数值；
+        inpArr[4].onclick = function () {
+            //移出前先判断有没有
+            if (ul.children[0]) {
+                alert("删除的数字为："+ul.lastChild.innerHTML);
+                ul.removeChild(ul.lastChild);
+
+            }else {
+                return alert("队列中没有元素")
+            }
+        }
+        //点击队列中任何一个元素，则该元素会被从队列中删除
+        function deleteLi() {
+            var liArr = document.getElementsByTagName("li");
+            for(var i=0; i<liArr.length; i++) {
+                liArr[i].onclick = function () {
+                    alert("当前将删除的数字为：" + this.innerHTML);
+                    ul.removeChild(this);
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
